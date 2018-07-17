@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initPlacemarksial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Заказы</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -55,7 +55,7 @@
             <template v-if="task.comment">
               <br>
               <div class="secondary">Комментарий:</div>
-              <p>{{ task.comment }}</p>
+              <p style="white-space: pre;">{{ task.comment }}</p>
             </template>
           </div>
         </div>
@@ -122,9 +122,7 @@
 
         <template v-if="selectedTask.comment">
           <div class="secondary">Комментарий:</div>
-          <p>
-            {{ selectedTask.comment }}
-          </p>
+          <p style="white-space: pre;">{{ selectedTask.comment }}</p>
           <br>
         </template>
 
