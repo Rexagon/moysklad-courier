@@ -33,7 +33,9 @@
           </div>
           <div class="content-column">
             <b>Заказ {{ task.code }}</b>
-            <span class="secondary"> = {{ Math.floor(task.summ / 100) }} р.</span>
+            <span class="secondary"> =
+              <span v-bind:style="{ color: task.payed ? undefined : 'var(--red)'}">{{ Math.floor(task.summ / 100) }} р.</span>
+            </span>
             <p>
               <span class="label background-orange" v-if="task.deliverBy">{{ task.deliverBy }}</span>
               <span class="label background-green" v-if="task.payed">Оплачен</span>
@@ -108,12 +110,6 @@
           <br>
         </template>
 
-        <div class="secondary">Сумма заказа:</div>
-        <p>
-          {{ Math.floor(selectedTask.summ / 100) }} р.
-        </p>
-        <br>
-
         <template v-if="selectedTask.receiverPhone && selectedTask.phone">
           <div class="secondary">Заказчик:</div>
           <p>
@@ -151,6 +147,12 @@
             </tr>
           </tbody>
         </table>
+
+        <div class="secondary">Сумма заказа:</div>
+        <p>
+          {{ Math.floor(selectedTask.summ / 100) }} р.
+        </p>
+        <br>
 
         <!--
         <template v-if="!selectedTask.shipped && !selectedTask.inactive">
