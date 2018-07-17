@@ -55,7 +55,7 @@
             <template v-if="task.comment">
               <br>
               <div class="secondary">Комментарий:</div>
-              <p style="white-space: pre;">{{ task.comment }}</p>
+              <p class="comment">{{ task.comment }}</p>
             </template>
           </div>
         </div>
@@ -122,7 +122,7 @@
 
         <template v-if="selectedTask.comment">
           <div class="secondary">Комментарий:</div>
-          <p style="white-space: pre;">{{ selectedTask.comment }}</p>
+          <p class="comment">{{ selectedTask.comment }}</p>
           <br>
         </template>
 
