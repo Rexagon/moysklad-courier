@@ -147,9 +147,7 @@
         </table>
 
         <div class="secondary">Сумма заказа:</div>
-        <p>
-          {{ Math.floor(selectedTask.summ / 100) }} р.
-        </p>
+        <p v-bind:style="{ color: selectedTask.payed ? undefined : 'var(--red)'}">{{ Math.floor(selectedTask.summ / 100) }} р.</p>
         <br>
 
         <!--
